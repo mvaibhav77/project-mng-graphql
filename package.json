@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "server": "node server/index.js",
-    "dev": "nodemon server/index.js"
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "frontend": "npm start --prefix frontend"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
